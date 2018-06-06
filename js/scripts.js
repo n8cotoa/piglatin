@@ -19,13 +19,15 @@ function pigLatin() {
     } else {
       var consArray = [];
       for (x = 0; x < splitWord.length; x += 1) {
-        if vowelsY.includes(x)
-        alert("Got it!")
-        if (!vowelsY.includes(splitWord[x])) {
+        if (vowelsY.includes(splitWord[x])) {
+          x = splitWord.length
+          console.log("should end here " + x)
+        } else {
           consArray.push(splitWord[x])
-          console.log(consArray)
+          console.log("pushing " + splitWord[x] + " to consarray")
         }
       }
+      outputArray.push((splitWord.slice(consArray.length).join("")) + consArray.join("") + "ay")
     }
     console.log(outputArray);
   });
